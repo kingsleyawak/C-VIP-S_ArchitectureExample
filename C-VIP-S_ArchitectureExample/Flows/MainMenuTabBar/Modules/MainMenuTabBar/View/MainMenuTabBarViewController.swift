@@ -16,7 +16,7 @@ enum MainMenuBarTabs:Int {
 class MainMenuTabBarViewController: UITabBarController, UITabBarControllerDelegate, MainTabBarViewProtocol {
 
     weak var presenter: MainTabBarPresenterProtocol?
-    var defaultSelectBar:MainMenuBarTabs = .profile
+    var defaultSelectBar:MainMenuBarTabs = .mainInfo
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -48,7 +48,7 @@ class MainMenuTabBarViewController: UITabBarController, UITabBarControllerDelega
 extension MainMenuTabBarViewController {
     
     func mainInfoTabTapped(navigationController: UINavigationController) {
-        print(#function)
+        presenter?.onMainInformationTabTapped(navigationController: navigationController)
     }
     
     func profileTabTapped(navigationController: UINavigationController) {

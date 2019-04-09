@@ -23,8 +23,19 @@ class MainMenuTabBarCoordinator:BaseCoordinator {
     }
     
     private func runTabBarFlow() {
-        tabBarModule.onLoad = runProfileFlow()
+        tabBarModule.onLoad = runMainInformationFlow()
+        tabBarModule.onMainInformationFlowSelect = runMainInformationFlow()
         tabBarModule.onProfileFlowSelect = runProfileFlow()
+    }
+    
+    private func runMainInformationFlow() -> NavigationControllerCompletion {
+        return { [unowned self] navigationController in
+            if navigationController.viewControllers.isEmpty {
+                let mainInformationCoordinator = MainInformationCoordinator(router: BaseRouter(rootNavigationController: navigationController))
+                self.addDependency(mainInformationCoordinator)
+                mainInformationCoordinator.start()
+            }
+        }
     }
     
     private func runProfileFlow() -> NavigationControllerCompletion {
@@ -36,7 +47,4 @@ class MainMenuTabBarCoordinator:BaseCoordinator {
             }
         }
     }
-    
-   
-    
 }

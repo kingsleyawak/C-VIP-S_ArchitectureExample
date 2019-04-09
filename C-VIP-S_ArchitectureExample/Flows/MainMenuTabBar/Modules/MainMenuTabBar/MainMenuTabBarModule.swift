@@ -10,16 +10,14 @@ import UIKit
 
 
 class MainMenuTabBarModule:MainTabBarModuleProtocol {
-   
+
     var interactor: MainTabBarInteractorProtocol
     var presenter: MainTabBarPresenterProtocol
     var view: MainTabBarViewProtocol
     
     var onLoad: NavigationControllerCompletion?
     var onProfileFlowSelect: NavigationControllerCompletion?
-    var onRecordFlowSelect: NavigationControllerCompletion?
-    var onTrainingFlowSelect: NavigationControllerCompletion?
-    var onShowMoreFlowSelect: NavigationControllerCompletion?
+    var onMainInformationFlowSelect: NavigationControllerCompletion?
     
     init(interactor:MainTabBarInteractorProtocol, presenter:MainTabBarPresenterProtocol, view:MainTabBarViewProtocol) {
         self.interactor = interactor
@@ -38,19 +36,9 @@ class MainMenuTabBarModule:MainTabBarModuleProtocol {
     func onProfileTabSelected(tabNavigationController: UINavigationController) {
         onProfileFlowSelect?(tabNavigationController)
     }
-    
-    func onRecordTabSelected(tabNavigationController: UINavigationController) {
-        onRecordFlowSelect?(tabNavigationController)
+    func onMainInformationTabSelected(tabNavigationController: UINavigationController) {
+        onMainInformationFlowSelect?(tabNavigationController)
     }
-    
-    func onTrainingTabSelected(tabNavigationController: UINavigationController) {
-        onTrainingFlowSelect?(tabNavigationController)
-    }
-    
-    func onShowMoreTabSelected(tabNavigationController: UINavigationController) {
-        onShowMoreFlowSelect?(tabNavigationController)
-    }
-    
    
     
 }

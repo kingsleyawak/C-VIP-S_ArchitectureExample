@@ -19,10 +19,12 @@ protocol MainTabBarModuleProtocol:Module {
     //Coordinator -> Module
     var onLoad:NavigationControllerCompletion? { get set }
     var onProfileFlowSelect: NavigationControllerCompletion? { get set }
+    var onMainInformationFlowSelect: NavigationControllerCompletion? { get set }
     
     //Presenter -> Module
     func onLoad(tabNavigationController:UINavigationController)
     func onProfileTabSelected(tabNavigationController:UINavigationController)
+    func onMainInformationTabSelected(tabNavigationController:UINavigationController)
 }
 
 //Presenter -> View
@@ -39,6 +41,7 @@ protocol MainTabBarPresenterProtocol:Presenter {
     //View -> Presenter
     func notifyViewLoaded(navigationController:UINavigationController)
     func onProfileTabTapped(navigationController:UINavigationController)
+    func onMainInformationTabTapped(navigationController:UINavigationController)
 }
 
 

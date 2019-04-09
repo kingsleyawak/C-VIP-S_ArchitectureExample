@@ -22,5 +22,9 @@ class MainMenuTabBarPresenter: MainTabBarPresenterProtocol {
     func onProfileTabTapped(navigationController: UINavigationController) {
         module?.onProfileTabSelected(tabNavigationController: navigationController)
     }
+    
+    func onMainInformationTabTapped(navigationController: UINavigationController) {
+        module?.onMainInformationTabSelected(tabNavigationController: navigationController)
+    }
 
 }
