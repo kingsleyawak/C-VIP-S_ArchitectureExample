@@ -1,0 +1,25 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+class {{ module_info.name }}Module:{{ module_info.name }}ModuleProtocol {
+   
+    var interactor: {{ module_info.name }}InteractorProtocol
+    var presenter: {{ module_info.name }}PresenterProtocol
+    var view: {{ module_info.name }}ViewProtocol
+  
+    init(interactor:{{ module_info.name }}InteractorProtocol, presenter:{{ module_info.name }}PresenterProtocol, view:{{ module_info.name }}ViewProtocol) {
+        self.interactor = interactor
+        self.presenter = presenter
+        self.view = view
+    }
+
+    func viewToPresent() -> View {
+        return view
+    }
+    
+}

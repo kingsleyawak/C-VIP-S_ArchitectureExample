@@ -1,0 +1,15 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+class {{ module_info.name }}Presenter: {{ module_info.name }}PresenterProtocol {
+
+    weak var module: {{ module_info.name }}ModuleProtocol?
+    weak var interactor: {{ module_info.name }}InteractorProtocol?
+    weak var view: {{ module_info.name }}ViewProtocol?
+
+}

@@ -1,0 +1,21 @@
+### Headers settings
+company: New Line Technologies
+
+### Xcode project settings
+project_name: C-VIP-S_ArchitectureExample
+xcodeproj_path: C-VIP-S_ArchitectureExample.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: C-VIP-S_ArchitectureExample
+
+# The file path for new modules
+project_file_path: C-VIP-S_ArchitectureExample/GeneratedClasses/Modules
+
+# The Xcode group path to new modules
+project_group_path: C-VIP-S_ArchitectureExample/GeneratedClasses/Modules
+
+
+### Templates
+templates:
+- {name: vip_module}

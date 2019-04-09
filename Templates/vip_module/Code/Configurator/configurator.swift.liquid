@@ -1,0 +1,33 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+class {{ module_info.name }}ModuleConfigurator:ModuleConfigurator {
+    
+    typealias ModuleType = {{ module_info.name }}ModuleProtocol
+    
+    class func makeModule() -> {{ module_info.name }}ModuleProtocol {
+        let interactor = {{ module_info.name }}Interactor()
+        let presenter = {{ module_info.name }}Presenter()
+        let view = UIStoryboard(name: "{{ module_info.name }}", bundle: nil).instantiateViewController(withIdentifier: "{{ module_info.name }}ViewController") as! {{ module_info.name }}ViewController
+        
+        interactor.presenter = presenter
+        
+        presenter.view = view
+        presenter.interactor = interactor
+        
+        view.presenter = presenter
+        
+        let module = {{ module_info.name }}Module(interactor:interactor, presenter:presenter, view:view)
+        presenter.module = module
+        
+        return module
+    }
+
+}

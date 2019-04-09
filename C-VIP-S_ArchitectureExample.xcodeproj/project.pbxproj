@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -97,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		759E621960BAB7DA5AA82CB7 /* GeneratedClasses */ = {
+			isa = PBXGroup;
+			children = (
+				EA5602CC4836EDA7D704EA93 /* Modules */,
+			);
+			path = GeneratedClasses;
+			sourceTree = "<group>";
+		};
 		C4B4D9AA225C96D700068F0F = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +131,7 @@
 				C4B4D9CA225C979400068F0F /* Services */,
 				C4B4D9D5225C979400068F0F /* Storyboards */,
 				C4B4D9C2225C96D700068F0F /* Info.plist */,
+				759E621960BAB7DA5AA82CB7 /* GeneratedClasses */,
 			);
 			path = "C-VIP-S_ArchitectureExample";
 			sourceTree = "<group>";
@@ -389,6 +398,13 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		EA5602CC4836EDA7D704EA93 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -421,11 +437,12 @@
 				TargetAttributes = {
 					C4B4D9B2225C96D700068F0F = {
 						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = C4B4D9AE225C96D700068F0F /* Build configuration list for PBXProject "C-VIP-S_ArchitectureExample" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -628,8 +645,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -641,10 +657,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4J3523WSNT;
 				INFOPLIST_FILE = "C-VIP-S_ArchitectureExample/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kingsleyedemawak.C-VIP-S-ArchitectureExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -659,10 +672,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4J3523WSNT;
 				INFOPLIST_FILE = "C-VIP-S_ArchitectureExample/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kingsleyedemawak.C-VIP-S-ArchitectureExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
