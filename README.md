@@ -47,10 +47,9 @@ Modules getting links to global services during assembly process in module confi
 ## In order to create a new flow in the application, you must proceed following steps:
 1. In the «Flows»  folder create a folder with the name of the new flow (FLOWNAME) (for example «MainInformation»)
 2. Inside this folder create file named (FLOWNAME) Coordinator (for example «MainInformationCoordinator»)
-3. Also inside this folder create folder named «Modules» 
-4. Create a folder with the name  (FLOWNAME) in the «Storyboards» folder
-![alt text](https://raw.githubusercontent.com/kingsleyawak/C-VIP-S_ArchitectureExample/master/README_FILES/storyboardFolderStructure.png)
-5. Each view controller in a storyboard must correspond to a view of a certain module from the from certain flow (for example «LoginViewController» is view in «LoginModule», which is one of the module  in «Authorization» flow )
+3. Inside this folder create storyboard named (FLOWNAME)
+4. Also inside this folder create folder named «Modules» 
+5. Each view controller in a storyboard must correspond to a view of a certain module from the certain flow (for example «LoginViewController» is view in «LoginModule», which is one of the module  in «Authorization» flow )
 
 ## In order to create a new module in flow, you must proceed following steps:
 1. Open terminal in root folder of project
@@ -61,5 +60,5 @@ Modules getting links to global services during assembly process in module confi
 4. Move newly created module inside «Modules» folder for desired flow 
 ![alt text](https://raw.githubusercontent.com/kingsleyawak/C-VIP-S_ArchitectureExample/master/README_FILES/fileStructure.png)
 5. Create new UIViewController in corresponding storyboard
-6. Link(Set class name and StoryboardID) with (MODULE_NAME)ViewController of newly created UIViewController
+6. Link(Set class name,StoryboardID and restorationID) with (MODULE_NAME)ViewController of newly created UIViewController
 ![alt text](https://raw.githubusercontent.com/kingsleyawak/C-VIP-S_ArchitectureExample/master/README_FILES/storyboardLink.png)
