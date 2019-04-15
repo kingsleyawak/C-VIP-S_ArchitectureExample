@@ -11,7 +11,7 @@ import UIKit
 
 class BaseRouter:Router {
     
-    private weak var rootNavigationController:UINavigationController?
+    var rootNavigationController:UINavigationController
     private var completions: [UIViewController : BaseCompletion]
     
     init(rootNavigationController: UINavigationController) {
@@ -25,7 +25,7 @@ class BaseRouter:Router {
     
     func present(_ module: Module, animated: Bool) {
         guard let controller = module.viewToPresent() as? UIViewController else { return }
-        rootNavigationController?.present(controller, animated: animated, completion: nil)
+        rootNavigationController.present(controller, animated: animated, completion: nil)
     }
     
     func dismiss(completion: BaseCompletion?) {
@@ -33,7 +33,7 @@ class BaseRouter:Router {
     }
     
     func dismiss(animated: Bool, completion: BaseCompletion?) {
-        rootNavigationController?.dismiss(animated: animated, completion: completion)
+        rootNavigationController.dismiss(animated: animated, completion: completion)
     }
     
     func setAsRoot(_ module: Module) {
@@ -43,8 +43,8 @@ class BaseRouter:Router {
     func setAsRoot(_ module: Module, animated: Bool, hideNavigationBar: Bool) {
         guard let controller = module.viewToPresent() as? UIViewController else { return }
         
-        rootNavigationController?.setViewControllers([controller], animated: animated)
-        rootNavigationController?.isNavigationBarHidden = hideNavigationBar
+        rootNavigationController.setViewControllers([controller], animated: animated)
+        rootNavigationController.isNavigationBarHidden = hideNavigationBar
     }
     
     func push(_ module: Module, completion: BaseCompletion?) {
@@ -59,7 +59,7 @@ class BaseRouter:Router {
         }
         
         controller.hidesBottomBarWhenPushed = hideBottomBar
-        rootNavigationController?.pushViewController(controller, animated: animated)
+        rootNavigationController.pushViewController(controller, animated: animated)
     }
     
     func popModule() {
@@ -67,7 +67,7 @@ class BaseRouter:Router {
     }
     
     func popModule(animated: Bool) {
-        if let removedController = rootNavigationController?.popViewController(animated: animated) {
+        if let removedController = rootNavigationController.popViewController(animated: animated) {
             runCompletion(for: removedController)
         }
     }
@@ -77,7 +77,7 @@ class BaseRouter:Router {
     }
     
     func popToRootModule(animated: Bool) {
-        if let removedControllers = rootNavigationController?.popToRootViewController(animated: animated) {
+        if let removedControllers = rootNavigationController.popToRootViewController(animated: animated) {
             removedControllers.forEach { controller in
                 runCompletion(for: controller)
             }

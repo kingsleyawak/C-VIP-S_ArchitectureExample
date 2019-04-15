@@ -6,7 +6,11 @@
 //  Copyright © 2019 New Line Technologies. All rights reserved.
 //
 
+import UIKit
+
 protocol Router {
+    
+    var rootNavigationController:UINavigationController { get set }
     
     func present(_ module: Module)
     func present(_ module: Module, animated: Bool)
