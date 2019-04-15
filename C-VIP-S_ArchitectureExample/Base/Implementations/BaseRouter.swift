@@ -12,6 +12,8 @@ import UIKit
 class BaseRouter:Router {
     
     var rootNavigationController:UINavigationController
+    var activeModules: Set<ModuleReference> = []
+    
     private var completions: [UIViewController : BaseCompletion]
     
     init(rootNavigationController: UINavigationController) {
@@ -26,6 +28,7 @@ class BaseRouter:Router {
     func present(_ module: Module, animated: Bool) {
         guard let controller = module.viewToPresent() as? UIViewController else { return }
         rootNavigationController.present(controller, animated: animated, completion: nil)
+        addModuleToActiveModules(module: module)
     }
     
     func dismiss(completion: BaseCompletion?) {
@@ -34,6 +37,7 @@ class BaseRouter:Router {
     
     func dismiss(animated: Bool, completion: BaseCompletion?) {
         rootNavigationController.dismiss(animated: animated, completion: completion)
+        removeAllActiveModules()
     }
     
     func setAsRoot(_ module: Module) {
@@ -45,6 +49,7 @@ class BaseRouter:Router {
         
         rootNavigationController.setViewControllers([controller], animated: animated)
         rootNavigationController.isNavigationBarHidden = hideNavigationBar
+        addModuleToActiveModules(module: module)
     }
     
     func push(_ module: Module, completion: BaseCompletion?) {
@@ -60,6 +65,7 @@ class BaseRouter:Router {
         
         controller.hidesBottomBarWhenPushed = hideBottomBar
         rootNavigationController.pushViewController(controller, animated: animated)
+        addModuleToActiveModules(module: module)
     }
     
     func popModule() {
@@ -69,6 +75,7 @@ class BaseRouter:Router {
     func popModule(animated: Bool) {
         if let removedController = rootNavigationController.popViewController(animated: animated) {
             runCompletion(for: removedController)
+            removeModuleFromActiveModules(viewController: removedController)
         }
     }
     
@@ -80,6 +87,7 @@ class BaseRouter:Router {
         if let removedControllers = rootNavigationController.popToRootViewController(animated: animated) {
             removedControllers.forEach { controller in
                 runCompletion(for: controller)
+                removeModuleFromActiveModules(viewController: controller)
             }
         }
     }
@@ -88,6 +96,29 @@ class BaseRouter:Router {
         guard let completion = completions[controller] else { return }
         completion()
         completions.removeValue(forKey: controller)
+    }
+    
+    //MARK: Memory Management
+    
+    // Adding module to active modules set to keep it in memory
+    private func addModuleToActiveModules(module:Module) {
+        guard let controller = module.viewToPresent() as? UIViewController, let identifier = controller.restorationIdentifier else {
+            return
+        }
+        let moduleReference = ModuleReference(identifier: identifier, module: module)
+        activeModules.insert(moduleReference)
+    }
+    
+    // Removing module from active modules set to release it from memory
+    private func removeModuleFromActiveModules(viewController:UIViewController) {
+        guard let identifier = viewController.restorationIdentifier else { return }
+        
+        let moduleReference = ModuleReference(identifier: identifier)
+        activeModules.remove(moduleReference)
+    }
+    
+    private func removeAllActiveModules() {
+        activeModules.removeAll()
     }
     
 }

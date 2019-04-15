@@ -11,6 +11,7 @@ import UIKit
 protocol Router {
     
     var rootNavigationController:UINavigationController { get set }
+    var activeModules:Set<ModuleReference> { get set }
     
     func present(_ module: Module)
     func present(_ module: Module, animated: Bool)

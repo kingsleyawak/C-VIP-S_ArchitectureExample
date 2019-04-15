@@ -12,7 +12,7 @@
         <!--Main Menu Tab Bar View Controller-->
         <scene sceneID="AuH-iQ-B22">
             <objects>
-                <tabBarController storyboardIdentifier="MainMenuTabBarViewController" id="RXF-go-0hc" customClass="MainMenuTabBarViewController" customModule="C_VIP_S_ArchitectureExample" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController restorationIdentifier="MainMenuTabBarViewController" storyboardIdentifier="MainMenuTabBarViewController" id="RXF-go-0hc" customClass="MainMenuTabBarViewController" customModule="C_VIP_S_ArchitectureExample" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g6K-WS-ZNq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

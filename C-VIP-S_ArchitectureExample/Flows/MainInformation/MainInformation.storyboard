@@ -13,7 +13,7 @@
         <!--Main Information View Controller-->
         <scene sceneID="REZ-kO-xS0">
             <objects>
-                <viewController storyboardIdentifier="MainInformationViewController" id="liz-BV-D0B" customClass="MainInformationViewController" customModule="C_VIP_S_ArchitectureExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MainInformationViewController" storyboardIdentifier="MainInformationViewController" id="liz-BV-D0B" customClass="MainInformationViewController" customModule="C_VIP_S_ArchitectureExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0YM-KH-xx5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
