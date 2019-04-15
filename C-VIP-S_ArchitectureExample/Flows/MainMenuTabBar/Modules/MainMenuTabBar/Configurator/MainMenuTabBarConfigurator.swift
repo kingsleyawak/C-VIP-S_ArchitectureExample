@@ -15,7 +15,7 @@ class MainMenuTabBarModuleConfigurator:ModuleConfigurator {
     class func makeModule() -> MainTabBarModuleProtocol {
         let interactor = MainMenuTabBarInteractor()
         let presenter = MainMenuTabBarPresenter()
-        let view = UIStoryboard(name: "MainTabBar", bundle: nil).instantiateViewController(withIdentifier: "MainMenuTabBarViewController") as! MainMenuTabBarViewController
+        let view = UIStoryboard(name: "MainMenuTabBar", bundle: nil).instantiateViewController(withIdentifier: "MainMenuTabBarViewController") as! MainMenuTabBarViewController
         
         interactor.presenter = presenter
         

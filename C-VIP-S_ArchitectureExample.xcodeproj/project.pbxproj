@@ -24,7 +24,7 @@
 		C4B4DA63225C979400068F0F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B4D9DD225C979400068F0F /* Profile.storyboard */; };
 		C4B4DA64225C979400068F0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B4D9DF225C979400068F0F /* LaunchScreen.storyboard */; };
 		C4B4DA65225C979400068F0F /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B4D9E1225C979400068F0F /* Application.storyboard */; };
-		C4B4DA66225C979400068F0F /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B4D9E4225C979400068F0F /* MainTabBar.storyboard */; };
+		C4B4DA66225C979400068F0F /* MainMenuTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B4D9E4225C979400068F0F /* MainMenuTabBar.storyboard */; };
 		C4B4DA67225C979400068F0F /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4D9E7225C979400068F0F /* BaseRouter.swift */; };
 		C4B4DA68225C979400068F0F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4D9E8225C979400068F0F /* BaseCoordinator.swift */; };
 		C4B4DA69225C979400068F0F /* BaseCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4D9E9225C979400068F0F /* BaseCompletion.swift */; };
@@ -71,7 +71,7 @@
 		C4B4D9DD225C979400068F0F /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		C4B4D9E0225C979400068F0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4B4D9E2225C979400068F0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Application.storyboard; sourceTree = "<group>"; };
-		C4B4D9E4225C979400068F0F /* MainTabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
+		C4B4D9E4225C979400068F0F /* MainMenuTabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainMenuTabBar.storyboard; sourceTree = "<group>"; };
 		C4B4D9E7225C979400068F0F /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		C4B4D9E8225C979400068F0F /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		C4B4D9E9225C979400068F0F /* BaseCompletion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCompletion.swift; sourceTree = "<group>"; };
@@ -285,7 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				C4B4D9F4225C979400068F0F /* MainMenuTabBarCoordinator.swift */,
-				C4B4D9E4225C979400068F0F /* MainTabBar.storyboard */,
+				C4B4D9E4225C979400068F0F /* MainMenuTabBar.storyboard */,
 				C4B4D9F5225C979400068F0F /* Modules */,
 			);
 			path = MainMenuTabBar;
@@ -525,7 +525,7 @@
 				C4B4DA63225C979400068F0F /* Profile.storyboard in Resources */,
 				C4B4DA64225C979400068F0F /* LaunchScreen.storyboard in Resources */,
 				C4D5E3B1225CB5720078B097 /* MainInformation.storyboard in Resources */,
-				C4B4DA66225C979400068F0F /* MainTabBar.storyboard in Resources */,
+				C4B4DA66225C979400068F0F /* MainMenuTabBar.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
